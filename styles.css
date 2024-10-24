@@ -15,8 +15,13 @@ a {
     color: #3498db;
     text-decoration: none;
 }
-a:hover {
+a:hover, a:focus {
     text-decoration: underline;
+    color: #2980b9;
+}
+a:focus {
+    outline: 2px dashed #2980b9;
+    outline-offset: 4px;
 }
 
 /* Container */
@@ -43,13 +48,30 @@ header h1 {
     transform: translateY(-20px);
     animation: fadeInDown 1s forwards;
 }
-header p {
+header .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Increased gap for better spacing */
+    flex-wrap: nowrap; /* Prevent items from wrapping on larger screens */
     font-size: 1.1em;
     color: #555;
     opacity: 0;
     transform: translateY(-20px);
     animation: fadeInDown 1s forwards;
     animation-delay: 0.5s;
+}
+header .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    max-width: 300px; /* Prevent items from being too wide */
+}
+header .contact-item i {
+    color: #3498db;
+    font-size: 1.2em;
+}
+header .contact-item a {
+    color: #3498db;
 }
 
 /* Sections */
@@ -132,7 +154,7 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 800px) { /* Updated from 600px to 800px */
     .container {
         padding: 20px;
     }
@@ -144,5 +166,26 @@ footer {
     }
     ul.skills-list li, ul.cert-list li, ul.license-list li {
         display: block;
+    }
+    /* Adjust contact-info layout on small screens */
+    header .contact-info {
+        flex-direction: column; /* Stack vertically */
+        align-items: center;
+        gap: 10px; /* Reduce gap for tighter spacing */
+        flex-wrap: nowrap; /* Ensure no wrapping */
+    }
+    header .contact-item {
+        flex-direction: column; /* Stack icon above text */
+        align-items: center;
+        max-width: 100%; /* Allow full width */
+        text-align: center; /* Center text */
+    }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
     }
 }
