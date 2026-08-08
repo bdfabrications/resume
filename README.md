@@ -5,6 +5,7 @@ Fully static. No build step. No backend.
 
 **Stack:** plain HTML + CSS  
 **Repo:** https://github.com/bdfabrications/resume  
+**Live domain:** https://aktradesman.com  
 **Host:** Nginx in Docker + Cloudflare Tunnel on ZimaBlade (same pattern as scprivateer.org)
 
 ---
@@ -72,18 +73,40 @@ docker ps | grep brandon_card
 
 LAN check: `http://<zimablade-ip>:4322/` and `.../resume/`
 
-### 3. Cloudflare Tunnel
+### 3. Cloudflare Tunnel → aktradesman.com
 
-Add a Public Hostname on the same tunnel as scprivateer.org:
+Use the **same tunnel** as scprivateer.org.
 
-- **Hostname:** e.g. `resume.crustyserver.us`
-- **Service:** HTTP → `localhost:4322`
+1. Cloudflare Dashboard → **Zero Trust** → **Networks** → **Tunnels**
+2. Open your existing tunnel → **Configure** → **Public Hostname** → **Add**
+3. Fill in:
 
-Cloudflare terminates HTTPS.
+| Field | Value |
+|--------|--------|
+| Subdomain | *(leave blank for apex)* |
+| Domain | `aktradesman.com` |
+| Path | *(blank)* |
+| Type | HTTP |
+| URL | `localhost:4322` |
+
+4. Save. Cloudflare usually creates the DNS `CNAME` for `@` → your tunnel automatically.
+
+Optional — also add `www`:
+
+| Field | Value |
+|--------|--------|
+| Subdomain | `www` |
+| Domain | `aktradesman.com` |
+| Type | HTTP |
+| URL | `localhost:4322` |
+
+Or redirect `www` → apex under **Rules** → **Redirect Rules**.
+
+5. Test from phone on cellular: https://aktradesman.com and https://aktradesman.com/resume/
 
 ### 4. QR code
 
-Generate after the public HTTPS URL works on cellular. Point the QR at the site root. Keep the PNG out of git (print asset only).
+Generate after HTTPS works on cellular. Point the QR at `https://aktradesman.com`. Keep the PNG out of git.
 
 ---
 
