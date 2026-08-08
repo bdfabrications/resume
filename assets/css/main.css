@@ -112,6 +112,7 @@ a:focus-visible {
 
 .identity__text {
   min-width: 0;
+  width: 100%;
 }
 
 .identity__eyebrow {
@@ -160,6 +161,36 @@ a:focus-visible {
 .identity__location strong {
   color: var(--text);
   font-weight: 600;
+}
+
+.identity__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 0.12rem;
+  transition:
+    color var(--ease),
+    border-color var(--ease);
+}
+
+.identity__contact::after {
+  content: "↓";
+  font-size: 0.85em;
+  line-height: 1;
+}
+
+.identity__contact:hover {
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 /* ---------- Sections ---------- */
@@ -573,6 +604,43 @@ a:focus-visible {
     width: 8.5rem;
     height: 8.5rem;
     flex-shrink: 0;
+  }
+
+  .identity__text {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 1rem;
+    align-items: center;
+    grid-template-areas:
+      "eyebrow contact"
+      "name name"
+      "role role"
+      "location location";
+  }
+
+  .identity__eyebrow {
+    grid-area: eyebrow;
+    margin-bottom: 0.75rem;
+  }
+
+  .identity__name {
+    grid-area: name;
+  }
+
+  .identity__role {
+    grid-area: role;
+  }
+
+  .identity__location {
+    grid-area: location;
+  }
+
+  .identity__contact {
+    grid-area: contact;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    justify-self: end;
+    align-self: start;
   }
 
   .contact {
