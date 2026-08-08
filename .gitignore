@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Env / secrets (none required for v1, keep habit)
+.env
+.env.*
+
+# Local scratch
+*.log
+tmp/
+.cache/
+
+# Local planning / Cursor notes — keep on disk, don't push
+CURSOR_PROMPT.md
+CURSOR_RULES.md
+ROADMAP.md
+
+# Physical-card assets — not part of the web deploy
+resume_qr.png
+*.qr.png

@@ -1,0 +1,586 @@
+/* Brandon DeWinne — digital business card
+   Palette: charcoal / off-white / copper accent
+   Mobile-first. Zero JS required. */
+
+:root {
+  --bg: #141414;
+  --bg-elevated: #1c1c1c;
+  --surface: #232323;
+  --border: #333333;
+  --text: #f2efe8;
+  --text-muted: #a8a49c;
+  --accent: #c4783a;
+  --accent-hover: #d48a4c;
+  --accent-dim: rgba(196, 120, 58, 0.15);
+  --focus: #e8b86d;
+  --max: 36rem;
+  --pad: 1.25rem;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+  --ease: 180ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(165deg, #1a1814 0%, var(--bg) 42%, #121212 100%),
+    repeating-linear-gradient(
+      -12deg,
+      transparent,
+      transparent 11px,
+      rgba(255, 255, 255, 0.012) 11px,
+      rgba(255, 255, 255, 0.012) 12px
+    );
+  background-attachment: fixed;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color var(--ease);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* ---------- Layout ---------- */
+
+.page {
+  width: min(100% - (var(--pad) * 2), var(--max));
+  margin-inline: auto;
+  padding-block: 2rem 3rem;
+}
+
+.page--resume {
+  --max: 42rem;
+  padding-block: 1.5rem 3rem;
+}
+
+/* ---------- Header / identity ---------- */
+
+.identity {
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border);
+  animation: rise 0.55s ease both;
+}
+
+.identity__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.identity__eyebrow::before {
+  content: "";
+  width: 1.25rem;
+  height: 2px;
+  background: var(--accent);
+}
+
+.identity__name {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 10vw, 3.35rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.identity__role {
+  margin-top: 0.55rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.identity__location {
+  margin-top: 0.35rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.identity__location strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--border);
+  animation: rise 0.55s ease both;
+}
+
+.section:nth-of-type(1) { animation-delay: 0.06s; }
+.section:nth-of-type(2) { animation-delay: 0.12s; }
+.section:nth-of-type(3) { animation-delay: 0.18s; }
+.section:nth-of-type(4) { animation-delay: 0.24s; }
+.section:nth-of-type(5) { animation-delay: 0.3s; }
+
+.section__label {
+  margin-bottom: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--text);
+}
+
+.lead + .lead {
+  margin-top: 0.75rem;
+}
+
+.proof {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.proof li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+}
+
+.proof li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: var(--accent);
+}
+
+.proof strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ---------- Skills ---------- */
+
+.skills {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+}
+
+.skill {
+  padding: 0 0 0 0.9rem;
+  border-left: 3px solid var(--accent);
+}
+
+.skill__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.skill__desc {
+  margin-top: 0.25rem;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Experience highlights ---------- */
+
+.highlight {
+  padding: 0 0 0 0.9rem;
+  border-left: 3px solid var(--accent);
+}
+
+.highlight + .highlight {
+  margin-top: 1.35rem;
+}
+
+.highlight__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.highlight__meta {
+  margin-top: 0.25rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.highlight__body {
+  margin-top: 0.65rem;
+  color: var(--text-muted);
+}
+
+.clients {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 1rem 1.1rem;
+  background: var(--accent-dim);
+  border: 1px solid transparent;
+  color: var(--text);
+  text-decoration: none;
+  transition:
+    background var(--ease),
+    border-color var(--ease),
+    transform var(--ease);
+}
+
+.contact__link:hover {
+  background: rgba(196, 120, 58, 0.22);
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.contact__link:active {
+  transform: translateY(0);
+}
+
+.contact__label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contact__value {
+  font-size: 1.15rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+/* ---------- CTA ---------- */
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3.1rem;
+  padding: 0.85rem 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #141414;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  transition:
+    background var(--ease),
+    color var(--ease),
+    border-color var(--ease);
+}
+
+.cta:hover {
+  background: transparent;
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.cta--ghost {
+  color: var(--text);
+  background: transparent;
+  border-color: var(--border);
+}
+
+.cta--ghost:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: transparent;
+}
+
+.cta-note {
+  margin-top: 0.65rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  animation: rise 0.55s ease both;
+  animation-delay: 0.36s;
+}
+
+.site-footer a {
+  color: var(--text-muted);
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Resume page ---------- */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.back-link::before {
+  content: "←";
+}
+
+.resume-header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.resume-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 8vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.resume-header .role {
+  margin-top: 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.resume-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 0.9rem;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+}
+
+.resume-meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.resume-meta a:hover {
+  text-decoration: underline;
+}
+
+.resume-section {
+  margin-bottom: 1.75rem;
+}
+
+.resume-section h2 {
+  margin-bottom: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.job {
+  margin-bottom: 1.35rem;
+}
+
+.job__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.job__role {
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+.job__meta {
+  margin-top: 0.15rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.job ul,
+.skills-plain {
+  margin-top: 0.55rem;
+  padding-left: 1.15rem;
+  color: var(--text-muted);
+}
+
+.job li + li,
+.skills-plain li + li {
+  margin-top: 0.35rem;
+}
+
+.skills-plain {
+  list-style: disc;
+}
+
+.resume-nav {
+  margin-top: 1.5rem;
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Desktop breathing room ---------- */
+
+@media (min-width: 640px) {
+  :root {
+    --pad: 1.5rem;
+  }
+
+  .page {
+    padding-block: 3rem 4rem;
+  }
+
+  .contact {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Print — résumé */
+@media print {
+  body {
+    background: #fff;
+    color: #111;
+  }
+
+  .back-link,
+  .site-footer {
+    display: none;
+  }
+
+  .page--resume {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  a {
+    color: #111;
+    text-decoration: none;
+  }
+
+  .resume-section h2,
+  .identity__eyebrow,
+  .section__label {
+    color: #8a4f1f;
+  }
+}

@@ -1,0 +1,12 @@
+services:
+  card-web:
+    image: nginx:alpine
+    container_name: brandon_card
+    restart: unless-stopped
+    ports:
+      # Pick any free host port — 4321 is already used by blackbox_storefront
+      - "4322:80"
+    volumes:
+      # Static site root (no build step). Exclude docs via a small nginx conf if needed.
+      - ./:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
