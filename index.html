@@ -1,183 +1,144 @@
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Brandon DeWinne — electrician with 16 years of experience. Relocating to Alaska. Electrical, welding, and related trades."
+    />
+    <meta name="theme-color" content="#141414" />
+    <title>Brandon DeWinne — Electrician | Alaska</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="identity">
+        <p class="identity__eyebrow">Available for work</p>
+        <h1 class="identity__name">Brandon DeWinne</h1>
+        <p class="identity__role">Electrician</p>
+        <p class="identity__location">
+          <strong>Relocating to Alaska</strong> — open to electrical work and
+          related skilled opportunities
+        </p>
+      </header>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brandon DeWinne - Resume</title>
-  <!-- Link to External CSS -->
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Font Awesome CDN for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    xintegrity="sha512-p8Q0yT3CkqE8D4unM0N+wULIKRFNtzimn9J6ku7DqGmBjw/+jH9RQXvXG22ssPXGYU6t++tCnN1hFdFFGq/6uw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+      <section class="section" aria-labelledby="about-heading">
+        <h2 id="about-heading" class="section__label">About</h2>
+        <p class="lead">
+          Sixteen years of residential and commercial electrical work across
+          Texas and Oklahoma. I show up prepared, communicate clearly, and leave
+          the job done right.
+        </p>
+        <ul class="proof">
+          <li>
+            <strong>Commercial &amp; residential</strong> — service, remodels,
+            and new work
+          </li>
+          <li>
+            <strong>Standout project:</strong> power infrastructure for a NASA
+            Johnson Space Center EVA training chamber system
+          </li>
+          <li>
+            Extra range in welding, light MSP/IT &amp; self-hosting, and general
+            trades — useful on remote or mixed-skill jobs
+          </li>
+        </ul>
+      </section>
 
-<body>
-  <div class="container">
-    <header>
-      <h1>Brandon DeWinne</h1>
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-          <strong>Location:</strong> Spring Branch, TX
+      <section class="section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading" class="section__label">Capabilities</h2>
+        <ul class="skills">
+          <li class="skill">
+            <h3 class="skill__title">Electrical</h3>
+            <p class="skill__desc">
+              Full-scope trade experience: service calls, residential remodels,
+              commercial retail and kitchen work, bidding, and customer-facing
+              job management. Familiar with basic PLC / ladder logic for
+              industrial controls.
+            </p>
+          </li>
+          <li class="skill">
+            <h3 class="skill__title">Welding</h3>
+            <p class="skill__desc">
+              Practical fabrication and repair capability alongside electrical
+              work when the job calls for it.
+            </p>
+          </li>
+          <li class="skill">
+            <h3 class="skill__title">MSP / IT &amp; self-hosting</h3>
+            <p class="skill__desc">
+              Hands-on with small networks, self-hosted infrastructure, and
+              contractor bidding tools I’ve built and use on the job.
+            </p>
+          </li>
+          <li class="skill">
+            <h3 class="skill__title">Handyman / general trades</h3>
+            <p class="skill__desc">
+              Comfortable spanning adjacent work when a site needs more than one
+              trade on the same day.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="experience-heading">
+        <h2 id="experience-heading" class="section__label">Highlighted work</h2>
+        <article class="highlight">
+          <h3 class="highlight__title">
+            NASA Johnson Space Center — EVA chamber power
+          </h3>
+          <p class="highlight__meta">Houston, TX · September 2025</p>
+          <p class="highlight__body">
+            Installed and verified primary power for an oil-sealed vacuum pumping
+            system serving an EVA training chamber dehumidification setup.
+            Integrated control and safety components (EP switches, process flow
+            switch, run/stop controls) to spec.
+          </p>
+        </article>
+        <article class="highlight">
+          <h3 class="highlight__title">Commercial electrical — CS Mechanical</h3>
+          <p class="highlight__meta">Texas &amp; Oklahoma · 2024–present</p>
+          <p class="highlight__body">
+            Commercial service across retail and kitchen accounts, scheduled
+            around operating hours.
+          </p>
+          <p class="clients">
+            Clients include Circle K, Boot Barn, Alamo Drafthouse, Buffalo Wild
+            Wings, and others.
+          </p>
+        </article>
+      </section>
+
+      <section class="section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="section__label">Contact</h2>
+        <div class="contact">
+          <a class="contact__link" href="tel:+12108955303">
+            <span class="contact__label">Phone</span>
+            <span class="contact__value">210-895-5303</span>
+          </a>
+          <a class="contact__link" href="mailto:bmdewinne@icloud.com">
+            <span class="contact__label">Email</span>
+            <span class="contact__value">bmdewinne@icloud.com</span>
+          </a>
         </div>
-        <div class="contact-item">
-          <i class="fas fa-phone" aria-hidden="true"></i>
-          <strong>Phone:</strong> <a href="tel:2108955303">210-895-5303</a>
-        </div>
-        <div class="contact-item">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-          <strong>Email:</strong>
-          <a href="mailto:bmdewinne@icloud.com">bmdewinne@icloud.com</a>
-        </div>
-      </div>
-    </header>
+      </section>
 
-    <section id="objective">
-      <h2>Objective</h2>
-      <p>
-        To provide electrical services to the Hill Country and all of its
-        surrounding areas.
-      </p>
-    </section>
+      <section class="section" aria-labelledby="resume-heading">
+        <h2 id="resume-heading" class="section__label">Full résumé</h2>
+        <a class="cta" href="/resume/">View full résumé</a>
+        <p class="cta-note">Work history, projects, and skills in detail.</p>
+      </section>
 
-    <section id="work-experience">
-      <h2>Work Experience</h2>
-
-      <div class="work-item">
-        <h3>CS Mechanical</h3>
-        <h4>Electrician</h4>
-        <p>TX | July 2024 – Present</p>
-        <ul>
-          <li>
-            Provide primarily commercial electrical service to Texas Regions,
-            as well as Oklahoma.
-          </li>
-          <li>
-            Notable clients: Circle K, Boot Barn, Alamo Draft House, Buffalo
-            Wild Wings, and many other commercial retailers and kitchens.
-            Responsible for their electrical needs in all Texas locations,
-            requiring a flexible schedule to avoid disrupting business
-            operations.
-          </li>
-        </ul>
-      </div>
-
-      <div class="work-item">
-        <h3>Tx Electric</h3>
-        <h4>Electrician</h4>
-        <p>New Braunfels, TX | January 2021 – July 2024</p>
-        <ul>
-          <li>
-            Provided electrical service, focusing primarily on residential
-            remodels and service calls.
-          </li>
-          <li>
-            Managed customer relations, including job evaluation, bidding,
-            service execution, and invoicing.
-          </li>
-        </ul>
-      </div>
-
-      <div class="work-item">
-        <h3>Blanco A/C Electrical & Plumbing</h3>
-        <h4>Electrician</h4>
-        <p>Blanco, TX | February 2019 – January 2021</p>
-        <ul>
-          <li>
-            Provided residential and commercial electrical services in the
-            Hill Country.
-          </li>
-          <li>
-            Worked on the LBJ State Park electrical remodel, a significant
-            commercial project.
-          </li>
-        </ul>
-      </div>
-
-      <div class="work-item">
-        <h3>Lowry Electrical</h3>
-        <h4>Electrician</h4>
-        <p>New Braunfels, TX | April 2016 – February 2019</p>
-        <ul>
-          <li>
-            Specialized in residential services with some light commercial
-            work, particularly in service projects.
-          </li>
-          <li>
-            Installed a solar array in the parking lot of the New Braunfels
-            Market Quarter.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="key-projects">
-      <h2>Key Projects</h2>
-      <div class="work-item">
-        <h3>EVA Chamber Dehumidification System Installation</h3>
-        <h4>Client: NASA - Johnson Space Center, Houston, TX</h4>
-        <p>September 2025</p>
-        <ul>
-          <li>
-            Successfully installed and verified the primary power
-            infrastructure for an advanced, oil-sealed vacuum pumping system
-            designed to eliminate atmospheric moisture within a NASA EVA
-            training chamber.
-          </li>
-          <li>
-            Wired and integrated critical control and safety components,
-            including multiple electro-pneumatic (EP) switches, a process flow
-            switch, and main run/stop controls to ensure system integrity.
-          </li>
-          <li>
-            This work directly supports astronaut training by preventing
-            sublimation frost from forming on surfaces during depressurization
-            and deep-space temperature simulations.
-          </li>
-          <li>
-            Ensured the complete system met all technical specifications,
-            contributing to the operational readiness of a facility essential
-            for preparing astronauts for future spacewalks.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <div class="education-item">
-        <h3>Canyon Lake High School</h3>
-        <p>Graduated: 2011</p>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>16 years of electrical experience in all fields of the trade</li>
-        <li>
-          Proficient in electrical service, with excellent customer relations
-          skills
-        </li>
-        <li>
-          Proficient with excel, sheets, and many other softwares directly
-          correlated with presenting professional bids
-        </li>
-        <li>
-          Have established relationships with multiple contacts throughout the
-          industry to help source special order parts
-        </li>
-        <li>
-          General knowledge and familiarity with PLCs and Ladder Logic chains
-          for industrial automation
-        </li>
-      </ul>
-    </section>
-    <footer>
-      <p>&copy; 2025 Brandon DeWinne. All rights reserved.</p>
-    </footer>
-  </div>
-</body>
-
+      <footer class="site-footer">
+        <p>&copy; 2026 Brandon DeWinne</p>
+      </footer>
+    </main>
+  </body>
 </html>
