@@ -94,6 +94,27 @@ a:focus-visible {
   animation: rise 0.55s ease both;
 }
 
+.identity__row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.15rem;
+}
+
+.identity__photo {
+  width: 7.25rem;
+  height: 7.25rem;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 2px solid var(--border);
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(196, 120, 58, 0.35);
+}
+
+.identity__text {
+  min-width: 0;
+}
+
 .identity__eyebrow {
   display: inline-flex;
   align-items: center;
@@ -432,8 +453,9 @@ a:focus-visible {
 
 .resume-meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
   margin-top: 0.9rem;
   font-size: 0.98rem;
   color: var(--text-muted);
@@ -540,6 +562,18 @@ a:focus-visible {
 
   .page {
     padding-block: 3rem 4rem;
+  }
+
+  .identity__row {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .identity__photo {
+    width: 8.5rem;
+    height: 8.5rem;
+    flex-shrink: 0;
   }
 
   .contact {
