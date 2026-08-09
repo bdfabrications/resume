@@ -15,18 +15,32 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/main.css?v=9" />
   </head>
   <body>
     <main class="page">
       <header class="identity">
-        <p class="identity__eyebrow">Available for work</p>
-        <h1 class="identity__name">Brandon DeWinne</h1>
-        <p class="identity__role">Electrician</p>
-        <p class="identity__location">
-          <strong>Relocating to Alaska</strong> — open to electrical work and
-          related skilled opportunities
-        </p>
+        <div class="identity__row">
+          <img
+            class="identity__photo"
+            src="/assets/images/headshot.png"
+            alt="Portrait of Brandon DeWinne"
+            width="160"
+            height="160"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="identity__text">
+            <p class="identity__eyebrow">Available for work</p>
+            <h1 class="identity__name">Brandon DeWinne</h1>
+            <p class="identity__role">Experienced Electrician. Broad Skill Set.</p>
+            <p class="identity__location">
+              <strong>Relocating to Alaska</strong> — open to electrical work
+              and related skilled opportunities
+            </p>
+            <a class="identity__contact" href="#contact-heading">Contact Me</a>
+          </div>
+        </div>
       </header>
 
       <section class="section" aria-labelledby="about-heading">
@@ -46,8 +60,8 @@
             Johnson Space Center EVA training chamber system
           </li>
           <li>
-            Extra range in welding, light MSP/IT &amp; self-hosting, and general
-            trades — useful on remote or mixed-skill jobs
+            Extra range in welding and general trades — useful on remote or
+            mixed-skill jobs
           </li>
         </ul>
       </section>
@@ -72,20 +86,18 @@
             </p>
           </li>
           <li class="skill">
-            <h3 class="skill__title">MSP / IT &amp; self-hosting</h3>
-            <p class="skill__desc">
-              Hands-on with small networks, self-hosted infrastructure, and
-              contractor bidding tools I’ve built and use on the job.
-            </p>
-          </li>
-          <li class="skill">
-            <h3 class="skill__title">Handyman / general trades</h3>
+            <h3 class="skill__title">General Trades &amp; Field Work</h3>
             <p class="skill__desc">
               Comfortable spanning adjacent work when a site needs more than one
               trade on the same day.
             </p>
           </li>
         </ul>
+        <p class="ask-about">
+          <span class="ask-about__label">Ask me about</span>
+          Data infrastructure and communications — networking, cabling, and
+          related setup when a job calls for it.
+        </p>
       </section>
 
       <section class="section" aria-labelledby="experience-heading">
@@ -125,7 +137,7 @@
             <span class="contact__label">Phone</span>
             <span class="contact__value">210-895-5303</span>
           </a>
-          <a class="contact__link" href="mailto:bmdewinne@icloud.com">
+          <a class="contact__link" href="mailto:brandon@aktradesman.com">
             <span class="contact__label">Email</span>
             <span class="contact__value">brandon@aktradesman.com</span>
           </a>
