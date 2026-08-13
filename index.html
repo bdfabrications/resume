@@ -15,31 +15,20 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/css/main.css?v=9" />
+    <link rel="stylesheet" href="/assets/css/main.css?v=11" />
   </head>
   <body>
     <main class="page">
       <header class="identity">
-        <div class="identity__row">
-          <img
-            class="identity__photo"
-            src="/assets/images/headshot.png"
-            alt="Portrait of Brandon DeWinne"
-            width="160"
-            height="160"
-            decoding="async"
-            fetchpriority="high"
-          />
-          <div class="identity__text">
-            <p class="identity__eyebrow">Available for work</p>
-            <h1 class="identity__name">Brandon DeWinne</h1>
-            <p class="identity__role">Experienced Electrician. Broad Skill Set.</p>
-            <p class="identity__location">
-              <strong>Relocating to Alaska</strong> — open to electrical work
-              and related skilled opportunities
-            </p>
-            <a class="identity__contact" href="#contact-heading">Contact Me</a>
-          </div>
+        <div class="identity__text">
+          <p class="identity__eyebrow">Available for work</p>
+          <h1 class="identity__name">Brandon DeWinne</h1>
+          <p class="identity__role">Experienced Electrician. Broad Skill Set.</p>
+          <p class="identity__location">
+            <strong>Relocating to Alaska</strong> — open to electrical work and
+            related skilled opportunities
+          </p>
+          <a class="identity__contact" href="#contact-heading">Contact Me</a>
         </div>
       </header>
 
@@ -132,15 +121,30 @@
 
       <section class="section" aria-labelledby="contact-heading">
         <h2 id="contact-heading" class="section__label">Contact</h2>
-        <div class="contact">
-          <a class="contact__link" href="tel:+12108955303">
-            <span class="contact__label">Phone</span>
-            <span class="contact__value">210-895-5303</span>
-          </a>
-          <a class="contact__link" href="mailto:brandon@aktradesman.com">
-            <span class="contact__label">Email</span>
-            <span class="contact__value">brandon@aktradesman.com</span>
-          </a>
+        <div class="contact-layout">
+          <img
+            class="contact-layout__photo"
+            src="/assets/images/headshot.png"
+            alt="Portrait of Brandon DeWinne"
+            width="160"
+            height="160"
+            loading="lazy"
+            decoding="async"
+          />
+          <p class="contact-intro">
+            Reach out directly by phone or email for electrical work and related
+            opportunities in Alaska.
+          </p>
+          <div class="contact">
+            <a class="contact__link" href="tel:+12108955303">
+              <span class="contact__label">Phone</span>
+              <span class="contact__value">210-895-5303</span>
+            </a>
+            <a class="contact__link" href="mailto:brandon@aktradesman.com">
+              <span class="contact__label">Email</span>
+              <span class="contact__value">brandon@aktradesman.com</span>
+            </a>
+          </div>
         </div>
       </section>
 

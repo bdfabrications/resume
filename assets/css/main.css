@@ -94,22 +94,6 @@ a:focus-visible {
   animation: rise 0.55s ease both;
 }
 
-.identity__row {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.15rem;
-}
-
-.identity__photo {
-  width: 7.25rem;
-  height: 7.25rem;
-  object-fit: cover;
-  object-position: center 18%;
-  border: 2px solid var(--accent);
-  border-radius: 2px;
-}
-
 .identity__text {
   min-width: 0;
   width: 100%;
@@ -341,7 +325,33 @@ a:focus-visible {
 
 /* ---------- Contact ---------- */
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "photo intro"
+    "links links";
+  gap: 1rem;
+  align-items: start;
+}
+
+.contact-layout__photo {
+  grid-area: photo;
+  width: 7.75rem;
+  height: 7.75rem;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 1px solid rgba(196, 120, 58, 0.3);
+  border-radius: 2px;
+}
+
+.contact-intro {
+  grid-area: intro;
+  color: var(--text-muted);
+}
+
 .contact {
+  grid-area: links;
   display: grid;
   gap: 0.75rem;
 }
@@ -613,18 +623,6 @@ a:focus-visible {
     padding-block: 3rem 4rem;
   }
 
-  .identity__row {
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .identity__photo {
-    width: 8.5rem;
-    height: 8.5rem;
-    flex-shrink: 0;
-  }
-
   .identity__text {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -660,6 +658,20 @@ a:focus-visible {
     margin-bottom: 0.75rem;
     justify-self: end;
     align-self: start;
+  }
+
+  .contact-layout {
+    grid-template-columns: minmax(9.5rem, 10.5rem) minmax(0, 1fr);
+    grid-template-areas:
+      "photo intro"
+      "photo links";
+    gap: 1.25rem 1.5rem;
+  }
+
+  .contact-layout__photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 
   .contact {
