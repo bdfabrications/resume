@@ -1,0 +1,13 @@
+{
+  "name": "Digital Business Card (static site)",
+  "ports": [
+    { "name": "web", "port": 8080 }
+  ],
+  "terminals": [
+    {
+      "name": "web",
+      "command": "python3 -m http.server 8080",
+      "description": "Serves the static site at http://localhost:8080 (card at /, full resume at /resume/). No build step; edit HTML/CSS and refresh."
+    }
+  ]
+}
