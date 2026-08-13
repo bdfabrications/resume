@@ -327,25 +327,31 @@ a:focus-visible {
 
 .contact-layout {
   display: grid;
-  gap: 1.25rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "photo intro"
+    "links links";
+  gap: 1rem;
   align-items: start;
 }
 
 .contact-layout__photo {
-  width: 9.75rem;
-  height: 9.75rem;
+  grid-area: photo;
+  width: 7.75rem;
+  height: 7.75rem;
   object-fit: cover;
   object-position: center 18%;
-  border: 1px solid rgba(196, 120, 58, 0.45);
+  border: 1px solid rgba(196, 120, 58, 0.3);
   border-radius: 2px;
 }
 
 .contact-intro {
-  margin-bottom: 1rem;
+  grid-area: intro;
   color: var(--text-muted);
 }
 
 .contact {
+  grid-area: links;
   display: grid;
   gap: 0.75rem;
 }
@@ -656,7 +662,10 @@ a:focus-visible {
 
   .contact-layout {
     grid-template-columns: minmax(9.5rem, 10.5rem) minmax(0, 1fr);
-    gap: 1.5rem;
+    grid-template-areas:
+      "photo intro"
+      "photo links";
+    gap: 1.25rem 1.5rem;
   }
 
   .contact-layout__photo {
