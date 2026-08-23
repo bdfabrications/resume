@@ -663,15 +663,20 @@ a:focus-visible {
   .contact-layout {
     grid-template-columns: minmax(9.5rem, 10.5rem) minmax(0, 1fr);
     grid-template-areas:
-      "photo intro"
+      "intro intro"
       "photo links";
     gap: 1.25rem 1.5rem;
+    align-items: stretch;
   }
 
   .contact-layout__photo {
     width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1;
+    align-self: stretch;
+  }
+
+  .contact {
+    grid-auto-rows: 1fr;
   }
 
   .skills {
