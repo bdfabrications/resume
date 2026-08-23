@@ -674,10 +674,6 @@ a:focus-visible {
     aspect-ratio: 1 / 1;
   }
 
-  .contact {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .skills {
     grid-template-columns: 1fr 1fr;
   }
